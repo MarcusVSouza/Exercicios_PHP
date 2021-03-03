@@ -1,0 +1,10 @@
+name: cursophp
+recipe: lamp
+config:
+  webroot: .
+
+services:
+  database:
+    type: mysql
+    portforward: 33069
+

@@ -13,6 +13,12 @@ function Triangle()
     $numbers = func_get_args();
     if (empty($numbers) || sizeof($numbers) > 3) {
         echo "Um triangulo deve ter 3 lados";
+    } elseif (
+        $numbers[0] > $numbers[1] + $numbers[2] ||
+        $numbers[1] > $numbers[0] + $numbers[2] ||
+        $numbers[2] > $numbers[1] + $numbers[0]
+    ) {
+        echo "Este não é um triangulo válido";
     } else {
         $vertice = $numbers[0];
         $verticeCounter = 0;
@@ -35,4 +41,4 @@ function Triangle()
         }
     }
 }
-Triangle(1, 1, 1);
+Triangle(10, 20, 10);
