@@ -1,6 +1,5 @@
 <?php
 require 'lib/functions.php';
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['name'])) {
@@ -27,9 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $bio = '';
     }
     if (isset($_POST['cpf'])) {
-        $bio = $_POST['cpf'];
+        $cpf = $_POST['cpf'];
     } else {
-        $bio = '';
+        $cpf = '';
     }
 
     $pets = get_pets();
@@ -43,11 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'age' => '',
     );
     $pets[] = $newPet;
-
+    $show = cpfCheck($cpf);
     save_pets($pets);
 
-    header('Location: /');
-    die;
+    // header('Location: /');
+    //die;
 }
 ?>
 
@@ -77,7 +76,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 <div class="form-group">
                     <label for="cpf" class="control-label">CPF</label>
-                    <input type="number" name="weight" id="cpf" class="form-control" />
+                    <input type="text" maxlength=11 name="cpf" id="cpf" class="form-control" value="<?php echo $cpf ?> " />
+                    <h2><?php if ($show) {
+                            echo "Cpf válido";
+                        } else {
+                            echo "Cpf inválido";
+                        }
+                        ?></h2>
                 </div>
 
 
