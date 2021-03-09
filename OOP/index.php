@@ -22,6 +22,8 @@
         $livros[2] = new Livro("O Senhor dos Aneis - As duas torres", "J.R.R Tolkien", 435, $pessoas[1]);
         $livros[3] = new Livro("O Senhor dos Aneis - O Retorno do Rei", "J.R.R Tolkien", 527, $pessoas[2]);
 
+        $pessoas[0]->aniversario();
+        $pessoas[0]->getIdade();
         $livros[0]->abrir();
         $livros[0]->folhear(400);
 

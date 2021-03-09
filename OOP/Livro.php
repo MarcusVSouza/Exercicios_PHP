@@ -27,6 +27,7 @@ class Livro implements Publicacao
         echo "<br><strong>Páginas:</strong> " . $this->totalPaginas;
         echo "<br><strong>Página atual:</strong> " . $this->paginaAtual;
         echo "<br><strong>Sendo lido por:</strong> " . $this->leitor->getNome();
+        echo "<br><strong>Idade:</strong> " . $this->leitor->getIdade();
         echo "<hr>";
     }
     public function getTitulo()

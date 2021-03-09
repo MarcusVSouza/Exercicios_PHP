@@ -38,4 +38,8 @@ class Pessoa
     {
         $this->sexo = $sexo;
     }
+    public function aniversario()
+    {
+        return $this->idade++;
+    }
 }
